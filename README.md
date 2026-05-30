@@ -1,3 +1,2 @@
-# SYNAPSE SHADOW
-
-An AI-powered cyberpunk command center designed to unify research, learning, business intelligence, and creative workflows into a single futuristic operating system experience.
+SYNAPSE SHADOW is a futuristic AI command center that transforms how users interact with intelligence systems. Instead of switching between tools, apps, and tabs, users operate within a unified cyberpunk-style interface powered by an AI core.
+It combines research automation, business intelligence, learning assistance, and real-time dashboards into a single immersive experience—functioning like an AI operating system rather than a traditional web app.
