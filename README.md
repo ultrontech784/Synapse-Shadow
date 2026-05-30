@@ -1,2 +1,3 @@
-# Synapse-Shadow
-A cyberpunk AI operating system featuring intelligent research, business analysis, creative tools, and an advanced command-center interface powered by AI.
+# SYNAPSE SHADOW
+
+An AI-powered cyberpunk command center designed to unify research, learning, business intelligence, and creative workflows into a single futuristic operating system experience.
