@@ -1,0 +1,9 @@
+{
+  "name": "synapse-shadow-os",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@google/genai": "latest",
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}
