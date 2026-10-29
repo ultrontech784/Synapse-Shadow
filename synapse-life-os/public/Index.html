@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synapse Shadow OS | Autonomous AI Life Operating System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+</head>
+<body class="bg-[#090A0F] text-slate-100 font-sans selection:bg-[#FF1E42] selection:text-white flex h-screen overflow-hidden">
+
+    <!-- Active Sidebar Menu -->
+    <aside class="w-64 bg-[#0D0F17] border-r border-slate-800 hidden md:flex flex-col justify-between p-6 z-20">
+        <div>
+            <!-- Logo -->
+            <div class="flex items-center gap-3 mb-10">
+                <div class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-700 flex items-center justify-center text-[#FF1E42] shadow-[0_0_15px_rgba(255,30,66,0.3)]">
+                    ⚡
+                </div>
+                <div>
+                    <span class="font-extrabold text-sm tracking-wider text-slate-100 block">SYNAPSE</span>
+                    <span class="text-xs font-mono text-[#FF1E42] tracking-widest block">SHADOW OS</span>
+                </div>
+            </div>
+
+            <!-- Working Navigation Links -->
+            <nav class="space-y-2">
+                <button onclick="switchTab('dashboard')" id="nav-dashboard" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold bg-[#FF1E42] text-white shadow-[0_0_20px_rgba(255,30,66,0.3)] transition-all">
+                    <span>⚡</span> Executive Dashboard
+                </button>
+                <button onclick="switchTab('calendar')" id="nav-calendar" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-900/60 transition-all">
+                    <span>📅</span> Calendar & Schedule
+                </button>
+                <button onclick="switchTab('finance')" id="nav-finance" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-900/60 transition-all">
+                    <span>🛡️</span> Financial Guard
+                </button>
+                <button onclick="switchTab('briefing')" id="nav-briefing" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-900/60 transition-all">
+                    <span>☀️</span> 7 AM Briefings
+                </button>
+            </nav>
+        </div>
+
+        <!-- Sidebar Credit Counter -->
+        <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl">
+            <div class="flex justify-between text-xs font-mono mb-2">
+                <span class="text-slate-400">Daily Free Credits</span>
+                <span class="text-[#FF1E42] font-bold"><span id="sidebar-runs">1000</span>/1000</span>
+            </div>
+            <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-[#FF1E42] h-full w-full" id="credit-bar"></div>
+            </div>
+            <button onclick="openCheckout('pri_01m643emcq41nj9r1q3ryk97yp')" class="mt-4 w-full bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 py-2 rounded-lg text-xs font-bold transition-all">
+                Unlock Executive ($49/mo)
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <div class="flex-1 flex flex-col h-screen overflow-y-auto">
+        
+        <!-- Header -->
+        <header class="border-b border-slate-800/80 bg-[#090A0F]/90 backdrop-blur sticky top-0 z-10 px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3 md:hidden">
+                <span class="font-extrabold text-sm tracking-wider text-white">SYNAPSE <span class="text-[#FF1E42]">OS</span></span>
+            </div>
+            <div class="hidden md:block">
+                <span class="text-xs font-mono text-slate-400">// LIVE KERNEL: <span class="text-emerald-400">Gemini 2.5 Flash Online</span></span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="openCheckout('pri_01m643emcq41nj9r1q3ryk97yp')" class="bg-[#FF1E42] hover:bg-[#d91232] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all shadow-[0_0_20px_rgba(255,30,66,0.4)]">
+                    Go Unlimited ($49/mo)
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-5xl w-full mx-auto p-6 md:p-10 space-y-8 flex-1">
+
+            <!-- TAB 1: EXECUTIVE DASHBOARD -->
+            <div id="tab-dashboard" class="space-y-8">
+                <div class="bg-[#0D0F17] border border-slate-800 rounded-2xl p-8 relative overflow-hidden shadow-2xl">
+                    <div class="flex items-center gap-2 text-xs font-mono text-[#FF1E42] mb-3">
+                        <span class="w-2 h-2 rounded-full bg-[#FF1E42] animate-pulse"></span>
+                        AUTONOMOUS MULTI-AGENT NETWORK ACTIVE
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-black text-white mb-4">
+                        Good Morning, Executive.
+                    </h1>
+                    <p class="text-slate-400 text-sm md:text-base max-w-2xl mb-8">
+                        Your multi-agent network has audited your schedule, optimized calendar overlaps, and flagged redundant recurring charges for today.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="triggerAction('Synthesize a high-priority 7 AM executive briefing for today', 'briefing')" class="bg-[#FF1E42] hover:bg-[#d91232] text-white font-bold px-6 py-3 rounded-xl transition-all shadow-[0_0_20px_rgba(255,30,66,0.4)] text-sm">
+                            ☀️ Run 7 AM Briefing
+                        </button>
+                        <button onclick="triggerAction('Analyze my schedule for meeting overlaps and suggest optimal deep-work shifts', 'calendar')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold px-6 py-3 rounded-xl transition-all text-sm">
+                            📅 Shift Schedule Conflicts
+                        </button>
+                        <button onclick="triggerAction('Audit recurring SaaS subscriptions and highlight redundant charges', 'expense')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold px-6 py-3 rounded-xl transition-all text-sm">
+                            🛡️ Run Expense Audit
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Agent Output Console -->
+                <div class="bg-[#0D0F17] border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="bg-slate-900/90 px-6 py-4 border-b border-slate-800 flex items-center justify-between">
+                        <span class="text-xs font-mono text-slate-400">gemini_router@synapse-os:~$</span>
+                        <span class="text-xs font-mono text-slate-500" id="status-indicator">Ready</span>
+                    </div>
+
+                    <div id="ai-output" class="p-6 font-mono text-sm text-slate-300 min-h-[220px] max-h-[350px] overflow-y-auto whitespace-pre-wrap space-y-3 bg-[#06070B]">
+                        <div class="text-slate-500">// Synapse Shadow OS v2.5 initialized. Type an instruction or click an action above...</div>
+                    </div>
+
+                    <div class="p-4 border-t border-slate-800 bg-slate-900/40 flex gap-3">
+                        <input 
+                            type="text" 
+                            id="user-input" 
+                            placeholder="Type an instruction (e.g., Draft my key strategy priorities for today)..." 
+                            class="flex-1 bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-[#FF1E42]"
+                        />
+                        <button onclick="submitCommand()" id="submit-btn" class="bg-[#FF1E42] hover:bg-[#d91232] text-white font-bold px-6 py-3 rounded-lg text-sm transition-all">
+                            Execute
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: CALENDAR -->
+            <div id="tab-calendar" class="space-y-6 hidden">
+                <div class="bg-[#0D0F17] border border-slate-800 rounded-2xl p-8 shadow-2xl">
+                    <h2 class="text-2xl font-black text-white mb-2">Autonomous Calendar Shifter</h2>
+                    <p class="text-slate-400 text-sm mb-6">AI agent continuously guards your deep-work hours by rescheduling overlapping commitments.</p>
+                    <button onclick="triggerAction('Reschedule conflicting meetings to clear afternoon deep-work blocks', 'calendar')" class="bg-[#FF1E42] hover:bg-[#d91232] text-white font-bold px-6 py-3 rounded-xl text-sm transition-all">
+                        Auto-Shift Today's Schedule
+                    </button>
+                </div>
+            </div>
+
+            <!-- TAB 3: FINANCE -->
+            <div id="tab-finance" class="space-y-6 hidden">
+                <div class="bg-[#0D0F17] border border-slate-800 rounded-2xl p-8 shadow-2xl">
+                    <h2 class="text-2xl font-black text-white mb-2">Financial Subscription Guard</h2>
+                    <p class="text-slate-400 text-sm mb-6">Continuous transaction audit scanning for duplicate SaaS fees and idle subscriptions.</p>
+                    <button onclick="triggerAction('Audit recurring SaaS subscriptions and highlight redundant charges', 'expense')" class="bg-[#FF1E42] hover:bg-[#d91232] text-white font-bold px-6 py-3 rounded-xl text-sm transition-all">
+                        Run Deep Financial Audit
+                    </button>
+                </div>
+            </div>
+
+            <!-- TAB 4: BRIEFING -->
+            <div id="tab-briefing" class="space-y-6 hidden">
+                <div class="bg-[#0D0F17] border border-slate-800 rounded-2xl p-8 shadow-2xl">
+                    <h2 class="text-2xl font-black text-white mb-2">Daily 7 AM Executive Briefing</h2>
+                    <p class="text-slate-400 text-sm mb-6">Instant morning syntheses generated by Gemini 2.5 Flash to set your daily trajectory.</p>
+                    <button onclick="triggerAction('Synthesize a high-priority 7 AM executive briefing for today', 'briefing')" class="bg-[#FF1E42] hover:bg-[#d91232] text-white font-bold px-6 py-3 rounded-xl text-sm transition-all">
+                        Synthesize Briefing Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pricing Tier Upgrade Cards -->
+            <div class="pt-10 border-t border-slate-800/80">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-black text-white mb-2">Unlock Unlimited Sovereign Access</h3>
+                    <p class="text-slate-400 text-sm">Upgrade to Pro or Executive for dedicated agent instances and uncapped compute.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-[#0D0F17] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-lg font-bold text-white mb-1">Pro Tier</h4>
+                            <p class="text-slate-400 text-xs mb-4">Standard daily agent compute.</p>
+                            <div class="text-3xl font-extrabold text-white mb-4">$19<span class="text-slate-400 text-xs">/mo</span></div>
+                        </div>
+                        <button onclick="openCheckout('pri_01m63bmsrdaygw778dt069xdzc')" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl border border-slate-700 text-xs">
+                            Subscribe To Pro ($19/mo)
+                        </button>
+                    </div>
+
+                    <div class="bg-[#0D0F17] border-2 border-[#FF1E42] rounded-2xl p-6 flex flex-col justify-between shadow-[0_0_30px_rgba(255,30,66,0.15)] relative">
+                        <div class="absolute -top-3 right-6 bg-[#FF1E42] text-white text-[9px] font-black uppercase px-2.5 py-0.5 rounded-full">
+                            Most Popular
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white mb-1">Executive Tier</h4>
+                            <p class="text-slate-400 text-xs mb-4">Unlimited dedicated agent instances.</p>
+                            <div class="text-3xl font-extrabold text-white mb-4">$49<span class="text-slate-400 text-xs">/mo</span></div>
+                        </div>
+                        <button onclick="openCheckout('pri_01m643emcq41nj9r1q3ryk97yp')" class="w-full bg-[#FF1E42] hover:bg-[#d91232] text-white font-bold py-3 rounded-xl transition-all text-xs shadow-[0_0_20px_rgba(255,30,66,0.4)]">
+                            Unlock Executive ($49/mo)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Application Script -->
+    <script>
+        let runsLeft = 1000;
+
+        if (typeof Paddle !== 'undefined') {
+            Paddle.Environment.set('production');
+            Paddle.Initialize({ token: 'live_aba7d49051e6d7bc235520c3a4a' });
+        }
+
+        function switchTab(tabName) {
+            ['dashboard', 'calendar', 'finance', 'briefing'].forEach(t => {
+                document.getElementById('tab-' + t).classList.add('hidden');
+                document.getElementById('nav-' + t).className = "w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-900/60 transition-all";
+            });
+            document.getElementById('tab-' + tabName).classList.remove('hidden');
+            document.getElementById('nav-' + tabName).className = "w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold bg-[#FF1E42] text-white shadow-[0_0_20px_rgba(255,30,66,0.3)] transition-all";
+        }
+
+        async function submitCommand() {
+            const input = document.getElementById('user-input');
+            const prompt = input.value.trim();
+            if (!prompt) return;
+            input.value = '';
+            await sendToAgent(prompt, 'general');
+        }
+
+        async function triggerAction(prompt, type) {
+            switchTab('dashboard');
+            await sendToAgent(prompt, type);
+        }
+
+        async function sendToAgent(commandText, actionType) {
+            const outputDiv = document.getElementById('ai-output');
+            const statusIndicator = document.getElementById('status-indicator');
+
+            statusIndicator.innerText = 'Processing...';
+            statusIndicator.className = 'text-xs font-mono text-[#FF1E42] animate-pulse';
+
+            const userLog = document.createElement('div');
+            userLog.className = 'text-[#FF1E42] font-bold mt-4';
+            userLog.innerText = `> ${commandText}`;
+            outputDiv.appendChild(userLog);
+
+            try {
+                const res = await fetch('/api/agent', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ command: commandText, type: actionType })
+                });
+
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.error || 'Server error');
+
+                const aiLog = document.createElement('div');
+                aiLog.className = 'text-slate-200 mt-2 leading-relaxed';
+                aiLog.innerText = data.output;
+                outputDiv.appendChild(aiLog);
+
+            } catch (err) {
+                const errLog = document.createElement('div');
+                errLog.className = 'text-red-400 mt-2';
+                errLog.innerText = `[ERROR]: ${err.message}`;
+                outputDiv.appendChild(errLog);
+            } finally {
+                statusIndicator.innerText = 'Ready';
+                statusIndicator.className = 'text-xs font-mono text-slate-500';
+                runsLeft--;
+                document.getElementById('sidebar-runs').innerText = runsLeft;
+                outputDiv.scrollTop = outputDiv.scrollHeight;
+            }
+        }
+
+        function openCheckout(priceId) {
+            if (typeof Paddle !== 'undefined') {
+                Paddle.Checkout.open({
+                    items: [{ priceId: priceId, quantity: 1 }],
+                    settings: { displayMode: 'overlay', theme: 'dark' }
+                });
+            }
+        }
+
+        document.getElementById('user-input').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') submitCommand();
+        });
+    </script>
+</body>
+</html>
